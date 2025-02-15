@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-data = pd.read_csv("Day_1_LinearRegression\LR_Scores.csv")
-
+data = pd.read_csv("P1_LinearRegression/LR_Scores.csv")
 def Calc_Total_Error(w, b, points):
     m = len(points)
     total = 0
@@ -32,5 +31,5 @@ for i  in range(1000):
         print(f"Loading {i}")
 
 plt.scatter(data.X,data.Y,color="black")
-plt.plot(list(range(0,11)),[w*x+b for x in range(0,11)])
+plt.plot(list(range(0,11)),[np.dot(x_np, w) + b for x in range(0,11)])
 plt.show()
